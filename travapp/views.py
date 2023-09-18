@@ -38,12 +38,12 @@ def register(request):
                                                 password=psw)
                 user.save()
                 print("user created")
+                return redirect('login')
 
         else:
             print("password not matching")
             messages.info(request, "password not matching")
             return redirect('register')
-        return redirect('/')
     return render(request, 'register.html')
 
 
